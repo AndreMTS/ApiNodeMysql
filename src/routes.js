@@ -1,8 +1,10 @@
 const router = require('express').Router();
 
-router.post('/', (req, res)=>{
-    res.json({success:true})
-})
+//importando as controllers
+const UserController = require('./controllers/UserController')
+
+router.post('/login', UserController.login)
+router.post('/create', UserController.create)
 
 
 module.exports = router
